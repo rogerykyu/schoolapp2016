@@ -10,7 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161030134608) do
+ActiveRecord::Schema.define(version: 20161031015410) do
+
+  create_table "applications", force: :cascade do |t|
+    t.date     "submit_date"
+    t.date     "interview_date"
+    t.date     "result_date"
+    t.boolean  "success"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.integer  "user_id"
+    t.integer  "school_id"
+    t.index ["school_id"], name: "index_applications_on_school_id"
+    t.index ["user_id"], name: "index_applications_on_user_id"
+  end
 
   create_table "schools", force: :cascade do |t|
     t.string   "name",       null: false

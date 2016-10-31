@@ -1,0 +1,43 @@
+<%= form_for(application) do |f| %>
+  <% if application.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(application.errors.count, "error") %> prohibited this application from being saved:</h2>
+
+      <ul>
+      <% application.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<div class="field">
+  <%= f.label "School" %>
+  <%= f.collection_select :school_id, School.order(:name), :id, :name %>
+</div>
+
+<div class="field">
+    <%= f.label :submit_date %>
+    <%= f.date_select :submit_date %>
+  </div>
+
+  <div class="field">
+    <%= f.label :interview_date %>
+    <%= f.date_select :interview_date, include_blank: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :result_date %>
+    <%= f.date_select :result_date, include_blank: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :success %>
+    <%= f.check_box :success %>
+  </div>
+
+  
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
