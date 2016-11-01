@@ -25,9 +25,7 @@
         <td><%= application.result_date %></td>
         <td><%= application.success ? "Yes" : "No" %></td>
         <td><%= link_to 'Edit', edit_application_path(application) %></td>
-        <% if current_user.email == "vvwmchan@gmail.com" %>
-          <td><%= link_to 'Destroy', application, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <% end %>
+        <td><%= link_to 'Delete', application, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

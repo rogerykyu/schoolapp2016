@@ -21,7 +21,9 @@
         <td><%= school.district %></td>
         <td><%= school.deadline %></td>
         <td><%= link_to 'Edit', edit_school_path(school) %></td>
-        <td><%= link_to 'Destroy', school, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if current_user.email == "vvwmchan@gmail.com" %>
+          <td><%= link_to 'Delete', school, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
