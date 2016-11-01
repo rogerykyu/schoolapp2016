@@ -2,7 +2,7 @@
 
 <h1>Your Applications</h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>School</th>
@@ -24,7 +24,6 @@
         <td><%= application.interview_date %></td>
         <td><%= application.result_date %></td>
         <td><%= application.success ? "Yes" : "No" %></td>
-        <td><%= link_to 'Show', application %></td>
         <td><%= link_to 'Edit', edit_application_path(application) %></td>
         <td><%= link_to 'Destroy', application, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

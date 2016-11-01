@@ -14,7 +14,7 @@ ActiveRecord::Schema.define(version: 20161031015410) do
 
   create_table "applications", force: :cascade do |t|
     t.date     "submit_date"
-    t.date     "interview_date"
+    t.datetime "interview_date"
     t.date     "result_date"
     t.boolean  "success"
     t.datetime "created_at",     null: false
