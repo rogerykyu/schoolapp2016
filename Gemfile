@@ -16,6 +16,7 @@ gem 'coffee-rails', '~> 4.2'
 gem 'devise'
 gem 'pg'
 gem 'bootstrap-sass'
+gem 'bootstrap-datepicker-rails'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

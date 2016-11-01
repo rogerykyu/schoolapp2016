@@ -1,0 +1,9 @@
+I"è(function() {
+  jQuery(function() {
+    return $('#school_deadline').datepicker({
+      dateFormat: 'yyyy-mm-dd'
+    });
+  });
+
+}).call(this);
+:ET

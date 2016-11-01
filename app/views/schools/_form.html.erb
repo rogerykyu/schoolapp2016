@@ -28,10 +28,19 @@
 
   <div class="field">
     <%= f.label :deadline %>
-    <%= f.date_select :deadline, include_blank: true %>
+    <%= f.text_field :deadline, include_blank: true, :id => "datepicker", :value => Date.today  %>
   </div>
 
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
+
+<script>
+$('#datepicker').datepicker({
+    format: "yyyy-mm-dd",
+    todayBtn: true,
+    autoclose: true,
+    todayHighlight: true
+});
+</script>

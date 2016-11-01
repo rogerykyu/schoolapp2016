@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161031015410) do
+ActiveRecord::Schema.define(version: 20161101121742) do
 
   create_table "applications", force: :cascade do |t|
     t.date     "submit_date"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20161031015410) do
     t.datetime "updated_at",     null: false
     t.integer  "user_id"
     t.integer  "school_id"
+    t.datetime "briefing_date"
     t.index ["school_id"], name: "index_applications_on_school_id"
     t.index ["user_id"], name: "index_applications_on_user_id"
   end

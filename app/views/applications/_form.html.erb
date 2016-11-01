@@ -17,8 +17,13 @@
 </div>
 
 <div class="field">
+    <%= f.label :briefing_date %>
+    <%= f.datetime_select :briefing_date, include_blank: true %>
+  </div>
+  
+<div class="field">
     <%= f.label :submit_date %>
-    <%= f.date_select :submit_date %>
+    <%= f.date_select :submit_date, include_blank: true %>
   </div>
 
   <div class="field">
