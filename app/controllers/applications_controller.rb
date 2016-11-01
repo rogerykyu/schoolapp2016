@@ -35,7 +35,7 @@ class ApplicationsController < ApplicationController
     respond_to do |format|
       if @application.save
         format.html { redirect_to @application, notice: 'Application was successfully created.' }
-        format.json { render :show, status: :created, location: @application }
+        format.json { render :index, status: :created, location: @application }
       else
         format.html { render :new }
         format.json { render json: @application.errors, status: :unprocessable_entity }
@@ -49,7 +49,7 @@ class ApplicationsController < ApplicationController
     respond_to do |format|
       if @application.update(application_params)
         format.html { redirect_to @application, notice: 'Application was successfully updated.' }
-        format.json { render :show, status: :ok, location: @application }
+        format.json { render :index, status: :ok, location: @application }
       else
         format.html { render :edit }
         format.json { render json: @application.errors, status: :unprocessable_entity }
@@ -75,6 +75,6 @@ class ApplicationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def application_params
-      params.require(:application).permit(:user_id, :school_id, :submit_date, :interview_date, :result_date, :success)
+      params.require(:application).permit(:user_id, :school_id, :submit_date, :interview_date, :result_date, :success, :briefing_date)
     end
 end
