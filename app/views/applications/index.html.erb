@@ -6,6 +6,7 @@
   <thead>
     <tr>
       <th>School</th>
+      <th>Type</th>
       <th>Deadline</th>
       <th>Briefing</th>
       <th>Submit Date</th>
@@ -20,10 +21,11 @@
     <% @applications.each do |application| %>
       <tr>
         <td><%= application.school.name %></td>
+        <td><%= application.school.school_type %></td>
         <td><%= application.school.deadline %></td>
-        <td><%= application.briefing_date %></td>
+        <td><%= application.try(:briefing_date).try(:strftime, ("%Y-%m-%d %H:%M")) %></td>
         <td><%= application.submit_date %></td>
-        <td><%= application.interview_date %></td>
+        <td><%= application.try(:interview_date).try(:strftime, ("%Y-%m-%d %H:%M")) %></td>
         <td><%= application.result_date %></td>
         <td><%= application.success ? "Yes" : "No" %></td>
         <td><%= link_to 'Edit', edit_application_path(application) %></td>

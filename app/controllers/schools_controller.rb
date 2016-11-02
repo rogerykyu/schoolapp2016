@@ -4,7 +4,7 @@ class SchoolsController < ApplicationController
   # GET /schools
   # GET /schools.json
   def index
-    @schools = School.order(:name)
+    @schools = School.order(:name).paginate(:page => params[:page], :per_page => 10)
   end
 
   # GET /schools/1
@@ -69,6 +69,6 @@ class SchoolsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def school_params
-      params.require(:school).permit(:name, :banding, :district, :deadline)
+      params.require(:school).permit(:name, :banding, :district, :deadline, :school_type)
     end
 end

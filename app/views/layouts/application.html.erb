@@ -35,7 +35,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <% if current_user %>
-                      <li><%= link_to "New Application", new_application_path %></li>
+                      <li><%= link_to "My Applications", applications_path %></li>
                       <li><%= link_to "School List", schools_path %></li>
                       <li><%= link_to "Logout", destroy_user_session_path, :method => :delete %></li>
                     <% else %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161101121742) do
+ActiveRecord::Schema.define(version: 20161102032144) do
 
   create_table "applications", force: :cascade do |t|
     t.date     "submit_date"
@@ -27,12 +27,13 @@ ActiveRecord::Schema.define(version: 20161101121742) do
   end
 
   create_table "schools", force: :cascade do |t|
-    t.string   "name",       null: false
+    t.string   "name",        null: false
     t.string   "banding"
     t.string   "district"
     t.date     "deadline"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "school_type"
   end
 
   create_table "users", force: :cascade do |t|
