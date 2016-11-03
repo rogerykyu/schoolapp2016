@@ -4,7 +4,7 @@ class SchoolsController < ApplicationController
   # GET /schools
   # GET /schools.json
   def index
-    @schools = School.order(:name).paginate(:page => params[:page], :per_page => 10)
+    @schools = School.order(:school_type, :name).paginate(:page => params[:page], :per_page => 10)
   end
 
   # GET /schools/1
