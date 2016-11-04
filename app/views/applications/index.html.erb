@@ -22,7 +22,11 @@
       <tr>
         <td><%= application.school.name %></td>
         <td><%= application.school.school_type %></td>
-        <td><%= application.school.deadline %></td>
+        <% if ((application.school.deadline - Date.today).to_i > 7) || !application.submit_date.nil?  %>
+          <td><%= application.school.deadline %></td>
+        <% else %>
+          <td class="danger"><%= application.school.deadline %></td>
+        <% end %>
         <td><%= application.try(:briefing_date).try(:strftime, ("%Y-%m-%d %H:%M")) %></td>
         <td><%= application.submit_date %></td>
         <td><%= application.try(:interview_date).try(:strftime, ("%Y-%m-%d %H:%M")) %></td>
