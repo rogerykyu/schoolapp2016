@@ -5,7 +5,7 @@ class ApplicationsController < ApplicationController
   # GET /applications.json
   def index
     if current_user
-      @applications = current_user.applications.sort_by { |x| [x.school.name] }
+      @applications = current_user.applications.joins(:school).order('school_type asc','name asc')
       # @applications = @temp.sort_by { |x| [x.school.name] }
     else
       redirect_to new_user_session_path
