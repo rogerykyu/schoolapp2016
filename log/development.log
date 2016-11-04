@@ -10566,3 +10566,108 @@ Processing by ApplicationsController#index as HTML
 Completed 200 OK in 391ms (Views: 350.8ms | ActiveRecord: 1.9ms)
 
 
+Started GET "/applications" for 203.198.127.180 at 2016-11-04 09:00:40 +0000
+Cannot render console from 203.198.127.180! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ApplicationsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering applications/index.html.erb within layouts/application
+  [1m[36mApplication Load (0.9ms)[0m  [1m[34mSELECT "applications".* FROM "applications" INNER JOIN "schools" ON "schools"."id" = "applications"."school_id" WHERE "applications"."user_id" = ? ORDER BY school_type asc, name asc[0m  [["user_id", 1]]
+  [1m[36mSchool Load (0.2ms)[0m  [1m[34mSELECT  "schools".* FROM "schools" WHERE "schools"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mSchool Load (0.2ms)[0m  [1m[34mSELECT  "schools".* FROM "schools" WHERE "schools"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mSchool Load (0.1ms)[0m  [1m[34mSELECT  "schools".* FROM "schools" WHERE "schools"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mSchool Load (0.1ms)[0m  [1m[34mSELECT  "schools".* FROM "schools" WHERE "schools"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSchool Load (0.1ms)[0m  [1m[34mSELECT  "schools".* FROM "schools" WHERE "schools"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered applications/index.html.erb within layouts/application (98.0ms)
+Completed 200 OK in 907ms (Views: 834.2ms | ActiveRecord: 5.8ms)
+
+
+Started DELETE "/users/sign_out" for 203.198.127.180 at 2016-11-04 09:01:03 +0000
+Cannot render console from 203.198.127.180! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"AQTCC9FmRQpAqMZ73aJExpdpiNY5FQLeBuLbDqfSz5Z1llB9WGDquxDVUaZltp/nuOGwhmmkRhUIIK95dQB0ag=="}
+  [1m[36mUser Load (81.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://apply-school-rogerykyu.c9users.io/
+Completed 302 Found in 112ms (ActiveRecord: 81.6ms)
+
+
+Started GET "/" for 203.198.127.180 at 2016-11-04 09:01:04 +0000
+Cannot render console from 203.198.127.180! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ApplicationsController#index as HTML
+Redirected to http://apply-school-rogerykyu.c9users.io/users/sign_in
+Completed 302 Found in 6ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 203.198.127.180 at 2016-11-04 09:01:04 +0000
+Cannot render console from 203.198.127.180! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  Rendering /usr/local/rvm/gems/ruby-2.3.0/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/devise-4.2.0/app/views/devise/shared/_links.html.erb (2.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application (76.2ms)
+Completed 200 OK in 336ms (Views: 330.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 203.198.127.180 at 2016-11-04 09:04:37 +0000
+Cannot render console from 203.198.127.180! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LgjDDnlo5rl3KjNwK3nwQ1MLbdU0A+aEf3SgjsZuHBLZfc16dNrEZZPK6hI9V0+Dn27ydQlMjGHHx08WPbh5+w==", "user"=>{"email"=>"1@test.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "1@test.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "last_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", 2016-11-04 09:04:37 UTC], ["last_sign_in_at", 2016-11-04 02:29:38 UTC], ["last_sign_in_ip", "203.198.127.180"], ["sign_in_count", 6], ["updated_at", 2016-11-04 09:04:37 UTC], ["id", 1]]
+  [1m[35m (18.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://apply-school-rogerykyu.c9users.io/
+Completed 302 Found in 354ms (ActiveRecord: 19.5ms)
+
+
+Started GET "/" for 203.198.127.180 at 2016-11-04 09:04:38 +0000
+Cannot render console from 203.198.127.180! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ApplicationsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering applications/index.html.erb within layouts/application
+  Rendered applications/index.html.erb within layouts/application (1.3ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.4ms)
+
+
+  
+SyntaxError (/home/ubuntu/workspace/app/views/applications/index.html.erb:28: syntax error, unexpected keyword_else, expecting ')'
+'.freeze;         else 
+                      ^
+/home/ubuntu/workspace/app/views/applications/index.html.erb:30: syntax error, unexpected keyword_end, expecting ')'
+'.freeze;         end 
+                     ^
+/home/ubuntu/workspace/app/views/applications/index.html.erb:39: syntax error, unexpected keyword_end, expecting ')'
+'.freeze;     end 
+                 ^
+/home/ubuntu/workspace/app/views/applications/index.html.erb:47: syntax error, unexpected keyword_ensure, expecting ')'
+/home/ubuntu/workspace/app/views/applications/index.html.erb:49: syntax error, unexpected keyword_end, expecting ')'):
+  
+app/views/applications/index.html.erb:28: syntax error, unexpected keyword_else, expecting ')'
+app/views/applications/index.html.erb:30: syntax error, unexpected keyword_end, expecting ')'
+app/views/applications/index.html.erb:39: syntax error, unexpected keyword_end, expecting ')'
+app/views/applications/index.html.erb:47: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/applications/index.html.erb:49: syntax error, unexpected keyword_end, expecting ')'
+  Rendering /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.6ms)
+  Rendering /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendering /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (49.8ms)
+Started GET "/" for 203.198.127.180 at 2016-11-04 09:04:58 +0000
+Cannot render console from 203.198.127.180! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ApplicationsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering applications/index.html.erb within layouts/application
+  [1m[36mApplication Load (0.4ms)[0m  [1m[34mSELECT "applications".* FROM "applications" INNER JOIN "schools" ON "schools"."id" = "applications"."school_id" WHERE "applications"."user_id" = ? ORDER BY school_type asc, name asc[0m  [["user_id", 1]]
+  [1m[36mSchool Load (0.2ms)[0m  [1m[34mSELECT  "schools".* FROM "schools" WHERE "schools"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mSchool Load (0.2ms)[0m  [1m[34mSELECT  "schools".* FROM "schools" WHERE "schools"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mSchool Load (0.2ms)[0m  [1m[34mSELECT  "schools".* FROM "schools" WHERE "schools"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mSchool Load (0.2ms)[0m  [1m[34mSELECT  "schools".* FROM "schools" WHERE "schools"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSchool Load (0.2ms)[0m  [1m[34mSELECT  "schools".* FROM "schools" WHERE "schools"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered applications/index.html.erb within layouts/application (123.2ms)
+Completed 200 OK in 390ms (Views: 383.2ms | ActiveRecord: 2.0ms)
+
+
