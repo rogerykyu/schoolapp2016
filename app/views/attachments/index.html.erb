@@ -1,0 +1,31 @@
+<h1>Shared Files</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Download Link</th>
+      <th>Updated</th>
+      <th>Uploaded by</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @attachments.each do |attachment| %>
+      <tr>
+        <td><%= attachment.title %></td>
+        <td><%= link_to "Click to download", attachment.document.url %></td>
+        <td><%= attachment.document_updated_at %></td>
+        <td><%= attachment.user.email %></td>
+        <% if attachment.user == current_user  %>
+          <td><%= link_to 'Delete', attachment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Attachment', new_attachment_path %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161102032144) do
+ActiveRecord::Schema.define(version: 20161109021825) do
 
   create_table "applications", force: :cascade do |t|
     t.date     "submit_date"
@@ -24,6 +24,18 @@ ActiveRecord::Schema.define(version: 20161102032144) do
     t.datetime "briefing_date"
     t.index ["school_id"], name: "index_applications_on_school_id"
     t.index ["user_id"], name: "index_applications_on_user_id"
+  end
+
+  create_table "attachments", force: :cascade do |t|
+    t.string   "title"
+    t.string   "document_file_name"
+    t.string   "document_content_type"
+    t.integer  "document_file_size"
+    t.datetime "document_updated_at"
+    t.integer  "user_id"
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+    t.index ["user_id"], name: "index_attachments_on_user_id"
   end
 
   create_table "schools", force: :cascade do |t|

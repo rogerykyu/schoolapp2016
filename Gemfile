@@ -18,6 +18,7 @@ gem 'pg'
 gem 'bootstrap-sass'
 gem 'bootstrap-datepicker-rails'
 gem 'will_paginate'
+gem 'paperclip'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

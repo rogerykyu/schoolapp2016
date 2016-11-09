@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :attachments
   root 'applications#index'
   resources :schools
   resources :applications
