@@ -92,7 +92,7 @@ Rails.application.configure do
     access_key_id: ENV.fetch('AKIAJCH2F35WYE32ZYEQ'),
     secret_access_key: ENV.fetch('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'),
     s3_region: ENV.fetch('Singapore'),
+    }
   }
-}
   
 end
