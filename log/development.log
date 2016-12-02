@@ -12432,3 +12432,131 @@ Completed 200 OK in 274ms (Views: 272.9ms | ActiveRecord: 0.0ms)
   [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Started GET "/" for 58.153.32.229 at 2016-12-02 13:09:59 +0000
+Cannot render console from 58.153.32.229! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ApplicationsController#index as HTML
+Redirected to http://apply-school-rogerykyu.c9users.io/users/sign_in
+Completed 302 Found in 18ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 58.153.32.229 at 2016-12-02 13:10:00 +0000
+Cannot render console from 58.153.32.229! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  Rendering /usr/local/rvm/gems/ruby-2.3.0/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/devise-4.2.0/app/views/devise/shared/_links.html.erb (1.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application (60.1ms)
+Completed 200 OK in 716ms (Views: 696.6ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/users/sign_in" for 58.153.32.229 at 2016-12-02 13:10:07 +0000
+Cannot render console from 58.153.32.229! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vCPOgqYbl9HnF82B0b86wILN46zKukGmI3GPuvJsaQ/jvXTYX546Il0VU/IyoeJAP2fRvpZaQoXAS/2vqwZSVw==", "user"=>{"email"=>"1@test.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "1@test.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 233ms (ActiveRecord: 0.5ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vCPOgqYbl9HnF82B0b86wILN46zKukGmI3GPuvJsaQ/jvXTYX546Il0VU/IyoeJAP2fRvpZaQoXAS/2vqwZSVw==", "user"=>{"email"=>"1@test.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering /usr/local/rvm/gems/ruby-2.3.0/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/devise-4.2.0/app/views/devise/shared/_links.html.erb (1.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 309ms (Views: 172.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 58.153.32.229 at 2016-12-02 13:10:11 +0000
+Cannot render console from 58.153.32.229! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fS9euQoEoFuObjWw9r0do7j5pUrjEUj5rN+cB1emByIiseTj84ENqDRsq8MVo8UjBVOXWL/xS9pP5e4SDsw8eg==", "user"=>{"email"=>"1@test.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "1@test.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "current_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", 2016-12-02 13:10:11 UTC], ["last_sign_in_at", 2016-11-09 06:48:28 UTC], ["current_sign_in_ip", "58.153.32.229"], ["sign_in_count", 11], ["updated_at", 2016-12-02 13:10:11 UTC], ["id", 1]]
+  [1m[35m (11.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://apply-school-rogerykyu.c9users.io/
+Completed 302 Found in 167ms (ActiveRecord: 12.1ms)
+
+
+Started GET "/" for 58.153.32.229 at 2016-12-02 13:10:11 +0000
+Cannot render console from 58.153.32.229! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ApplicationsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering applications/index.html.erb within layouts/application
+  [1m[36mApplication Load (0.2ms)[0m  [1m[34mSELECT "applications".* FROM "applications" INNER JOIN "schools" ON "schools"."id" = "applications"."school_id" WHERE "applications"."user_id" = ? ORDER BY school_type asc, name asc[0m  [["user_id", 1]]
+  [1m[36mSchool Load (0.2ms)[0m  [1m[34mSELECT  "schools".* FROM "schools" WHERE "schools"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mSchool Load (0.1ms)[0m  [1m[34mSELECT  "schools".* FROM "schools" WHERE "schools"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mSchool Load (0.1ms)[0m  [1m[34mSELECT  "schools".* FROM "schools" WHERE "schools"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mSchool Load (0.1ms)[0m  [1m[34mSELECT  "schools".* FROM "schools" WHERE "schools"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSchool Load (0.1ms)[0m  [1m[34mSELECT  "schools".* FROM "schools" WHERE "schools"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered applications/index.html.erb within layouts/application (55.4ms)
+Completed 200 OK in 244ms (Views: 212.7ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/attachments" for 58.153.32.229 at 2016-12-02 13:10:14 +0000
+Cannot render console from 58.153.32.229! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AttachmentsController#index as HTML
+  Rendering attachments/index.html.erb within layouts/application
+  [1m[36mAttachment Load (0.3ms)[0m  [1m[34mSELECT  "attachments".* FROM "attachments" ORDER BY "attachments"."document_updated_at" DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered attachments/index.html.erb within layouts/application (106.2ms)
+Completed 200 OK in 299ms (Views: 291.1ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/attachments/new" for 58.153.32.229 at 2016-12-02 13:10:18 +0000
+Cannot render console from 58.153.32.229! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AttachmentsController#new as HTML
+  Rendering attachments/new.html.erb within layouts/application
+  Rendered attachments/_form.html.erb (3.8ms)
+  Rendered attachments/new.html.erb within layouts/application (5.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 263ms (Views: 260.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/attachments" for 58.153.32.229 at 2016-12-02 13:10:20 +0000
+Cannot render console from 58.153.32.229! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AttachmentsController#index as HTML
+  Rendering attachments/index.html.erb within layouts/application
+  [1m[36mAttachment Load (0.3ms)[0m  [1m[34mSELECT  "attachments".* FROM "attachments" ORDER BY "attachments"."document_updated_at" DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered attachments/index.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 190ms (Views: 188.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/attachments/new" for 58.153.32.229 at 2016-12-02 13:10:30 +0000
+Cannot render console from 58.153.32.229! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AttachmentsController#new as HTML
+  Rendering attachments/new.html.erb within layouts/application
+  Rendered attachments/_form.html.erb (2.2ms)
+  Rendered attachments/new.html.erb within layouts/application (35.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 224ms (Views: 222.2ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/attachments" for 58.153.32.229 at 2016-12-02 13:10:50 +0000
+Cannot render console from 58.153.32.229! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AttachmentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xnHVMnMOZqqXayRiQRWSMFv038nLcCQaETJVe3IuEIbzhS+2nS8sKgkMVMA/3IdmKCZf+OR7lNNeEjnJSsCyMw==", "attachment"=>{"title"=>"test2", "document"=>#<ActionDispatch::Http::UploadedFile:0x007f5e6103dd08 @tempfile=#<Tempfile:/tmp/RackMultipart20161202-1714-1bhh3uc.pdf>, @original_filename="02-Gods_Magnificent_Love.pdf", @content_type="application/pdf", @headers="Content-Disposition: form-data; name=\"attachment[document]\"; filename=\"02-Gods_Magnificent_Love.pdf\"\r\nContent-Type: application/pdf\r\n">}, "commit"=>"Upload"}
+Command :: file -b --mime '/tmp/eb97e904559605605bec0c9542648ff720161202-1714-13sclwg.pdf'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Command :: file -b --mime '/tmp/eb97e904559605605bec0c9542648ff720161202-1714-skfl82.pdf'
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "attachments" ("title", "document_file_name", "document_content_type", "document_file_size", "document_updated_at", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "test2"], ["document_file_name", "02-Gods_Magnificent_Love.pdf"], ["document_content_type", "application/pdf"], ["document_file_size", 800178], ["document_updated_at", 2016-12-02 13:10:50 UTC], ["user_id", 1], ["created_at", 2016-12-02 13:10:50 UTC], ["updated_at", 2016-12-02 13:10:50 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+Completed 500 Internal Server Error in 38ms (ActiveRecord: 1.2ms)
+
+
+  
+Errno::EACCES (Permission denied @ dir_s_mkdir - /attachments):
+  
+app/controllers/attachments_controller.rb:31:in `block in create'
+app/controllers/attachments_controller.rb:30:in `create'
+  Rendering /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.4ms)
+  Rendering /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendering /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (38.0ms)
